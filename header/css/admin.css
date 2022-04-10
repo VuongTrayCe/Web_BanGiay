@@ -1,0 +1,217 @@
+h1
+{
+    text-align:center;
+    width: 100%;
+    height:50px;
+    line-height: 50px;
+    background-color:rgb(113, 113, 170);
+}
+.header
+{
+    width: 80%;
+    height:30px;
+    background-color: rgb(203, 184, 233);
+    margin:auto;
+}
+a
+{
+  text-decoration: none;
+  color:black;
+}
+.header__menu
+{
+    display: flex;
+    justify-content: center;
+}
+.header__menu div{
+   flex-basis:180px;
+   font-size:20px;
+}
+.header a:hover{
+    color:red;
+}
+.wrapper_table-row th
+{
+    display: inline-block;
+  margin-right: 100px;
+    background-color: aquamarine;
+}
+.wrapper_table-row tr
+{
+    border-bottom: 1px solid;
+
+}
+
+.wrapper_table
+{
+    width: 80%;
+    height: 100px;
+    border: 1px solid;
+    margin:auto;
+    margin-top: 5px;
+}
+.wrapper_table2
+{
+    width: 80%;
+    height: 100px;
+    border: 1px solid;
+    margin:auto;
+    margin-top: 5px;
+}
+
+.display_User
+{
+    width: 100%;
+}
+#display_order
+{
+    width: 100%;
+}
+#display_order table
+{
+    width: 80%;
+}
+.cart_table-column1
+{
+    height:10px;
+    background-color:rgb(183, 233, 216);
+}
+.cart_table-row1
+{
+    width:200px;
+    text-align: center;
+}
+.detail
+{
+    position:fixed;
+    top:200px;
+    left:300px;
+    width:800px;
+    background-color:rgb(189, 189, 230);
+    animation-name: detail;
+    animation-duration: 0.5s;
+}
+@keyframes detail
+{
+       from{
+           top:0px;
+       }
+       to{
+           top:px;
+       }
+}
+#detail-column:hover
+{
+  color: red;
+}
+#detail-left-id
+{
+    float:left;
+    width:40%;
+    margin-top: 10px;
+}
+#detail-right-id
+{
+    float:left;
+    border-left: 1px solid;
+    width:50%;
+}
+#detail-right-id th
+{
+    width:200px;
+    margin-left: 10px;
+
+}
+#detail-right-id td{
+    margin-left: 10px;
+    text-align: center;
+}
+#Close-detail
+{
+    float:left;
+    margin-left: 40px;
+}
+#display_AddProduct
+{
+    width:80%;
+    margin:auto}
+    #display_AddProduct input{
+        display:list-item;
+}
+#display_SuaProduct
+{
+    border: 1px solid black;
+    width:400px;
+    height:400px;
+    position:fixed;
+    border-radius: 5px;
+    top:100px;
+    left:400px;
+    background-color:rgb(92, 189, 228);
+}
+#display_SuaProduct-id
+{
+    width:370px;
+    float:left;
+
+}
+#closeSuasanpham-id
+{
+    width:20px;
+    float:left;
+}
+#display_SuaProduct input{
+    display:list-item;
+    border-radius: 5px;
+    margin: auto;
+}
+#display_SuaProduct label{
+    margin-left: 100px;
+}
+#sua-img
+{
+    margin-left:150px;
+}
+h2{
+    text-align:center;
+}
+#display_SuaProduct-id button{
+    margin-left: 150px;
+    margin-top: 20px;
+}
+
+.check_delete
+{
+    position: fixed;
+    top:200px;
+    left:500px;
+    width: 190px;
+    height: 70px;
+    background-color:rgb(162, 162, 224);
+    border-radius:10px;
+}
+.check_delete-header
+{
+    text-align:center;
+}
+#check_delete-left
+{
+    width:50%;
+    background-color: red;
+    float: left;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+#check_delete-right
+{
+    width:50%;
+    background-color: rgb(36, 199, 36);
+    float: left;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+
+

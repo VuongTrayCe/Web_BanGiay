@@ -1,0 +1,145 @@
+.Detail{
+    display:none;
+    width:100%;
+    border-top: 2px solid;
+    height:400px;
+    margin-top:20px;
+
+}
+.Detail__image{
+    width:380px;
+    height:380px;
+    background-color:blue;
+    margin-top: 10px;
+    margin-left: 100px;
+    margin-right:100px;
+    float: left;
+    border: 1px solid;
+}
+.Detail__content{
+    width: 400px;
+    height: 180px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.Detail__content-item
+{
+    width: 100%;
+    margin-bottom: 10px;
+    color:black;
+}
+.Detail__content-item-name
+{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    height: 40px;
+    width: 600px;
+    margin-top: 0;
+    font-size: 26px;
+    line-height: 29px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+    color: #000;
+}
+.Detail__content-item-gender
+{
+    text-align: center;
+    margin-top: 10px;
+}
+.Detail__content-item-price
+{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #af1713;
+    display: inline-block;
+}
+.Detail__content-item-soluongcon
+{
+    text-align: center;
+}
+.Detail__content-item-SL
+{
+    text-align: center;
+
+}
+.Detail__content-item-SL input
+{
+    width:40px;
+    border-radius: none ;
+    text-align: center;
+}
+button
+{
+    cursor: pointer;
+}
+.btn:hover{
+    color:red;
+}
+.Detail__content-item-add button
+{
+    float:right;
+    background-color:black;
+    color:aliceblue;
+    width: 150px;
+    height: 30px;
+}
+.Detail__content-item-add
+{
+    margin-bottom: 50px;
+
+}
+.giohang__close
+{
+    width: 3px;
+    height:100px;
+    float: left;
+}
+.giohang__close button
+{
+  width: 30px;
+  height:30px;
+  margin: auto;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+a,button:hover{
+    cursor:pointer;
+}
+#Detail__content-item-detail-id
+{
+    width: 450px;
+}
+#Detail__content-item-detail-left
+{
+    float:left;
+    width: 200px;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    text-align: center;
+}
+#Detail__content-item-detail-left:hover a{
+    color:red;
+}
+#Detail__content-item-detail-right
+{
+    width: 200px;
+    float:left;
+    border-bottom: 2px solid;
+    text-align: center;
+}
+#Detail__content-item-detail-right:hover a{
+    color:red;
+}
+#Detail__content-item-displaydetail-id
+{
+    width:400px;
+    height: 210px;
+    clear: both;
+}
+.Detail__content-item-detail
+{
+    margin-top: 20px;
+    clear: both;
+}

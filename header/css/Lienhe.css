@@ -1,0 +1,52 @@
+.Lienhe_title
+{
+    position: relative;
+   width:1331px;
+   height: 300px;
+}
+.Lienhe_title h1{
+    position: absolute;
+    text-align: center;
+    margin-left: 450px;
+    line-height: 390px;
+    font-size: 50px;
+}
+.Lienhe_title img{
+    width: 1331px;
+    height: 260px;
+}
+.Lienhe_info
+{
+    clear: both;
+    width: 100%;
+    height: 500px;
+}
+.Lienhe_info h1{
+    text-align: center;
+}
+.Lienhe_info h3{
+    text-align: center;
+}
+.Lienhe_info form{
+    margin-left: 400px;
+}
+.Lienhe_info form lable
+{
+    font-size:20px;
+}
+.Lienhe_info form button
+{
+    width: 400px;
+    height:40px;
+    background-color:black;
+    color:aliceblue;
+    font-size:20px;
+}
+.contact{
+    display: block;
+    width:400px;
+    height: 40px;
+    border: none;
+    margin-top: 10px;
+    background-color:#25232311;
+}

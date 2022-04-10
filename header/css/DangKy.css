@@ -1,0 +1,97 @@
+.wrapper__form
+{
+    width: 800px;
+    height: 530px;
+    background-image: linear-gradient(to top,rgb(61, 199, 169),rgb(211, 148, 148));
+    margin: auto;
+    border-radius: 10px;
+}
+.wrapper__form-top
+{
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 25px;
+    background-color:rgb(190, 105, 84);
+}
+.wrapper__form-center
+{
+    height:410px;
+}
+.wrapper__form-center-left
+{
+    float: left;
+    width: 400px;
+    height:100%;
+}
+.wrapper__form-center-right
+{
+    float: left;
+    width: 400px;
+
+}
+.wrapper__form-center input
+{
+    display: block;
+    margin-top: 5px;
+    border-radius: 5px;
+    text-align:center;
+    margin-left: 100px;
+}
+.wrapper__form-center input
+{
+    height: 20px;
+}
+label
+{
+    margin-top: 10px;
+   margin-left: 100px;
+   display: block;
+}
+#gender
+{
+    display: inline-block;
+    margin-left:100px;
+    margin-right:0px;
+}
+#genderr
+{
+    display: inline-block;
+    margin-left:0px;
+}
+.wrapper__form-bottom
+{
+    display: flex;
+    justify-content:right;
+    margin: 10px;
+}
+.wrapper__form-bottom div{
+    margin-right: 10px;
+}
+.wrapper__form-bottom-bottom{
+    text-align: center;
+}.wrapper__form-bottom-bottom a
+{
+    margin-right:10px;
+}
+span{
+    font-size: 13px;
+    color: rgb(226, 38, 38);
+}
+.wrapper__form-bottom-left
+{
+    position: absolute;
+    top:468px;
+    right: 70px;
+    bottom: 1px;
+    margin-right: 290px;
+    margin-bottom: 100px;
+}
+.wrapper__form-bottom-left button
+{
+    background-color: rgb(240, 101, 101);
+}
+.wrapper__form-bottom-right input
+{
+    background-color:rgb(240, 101, 101);
+}

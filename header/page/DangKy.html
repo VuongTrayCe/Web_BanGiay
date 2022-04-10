@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../css/DangKy.css">
+        <script src="../js/user.js"></script>
+    </head>
+    <body>
+        <!--Tạo form đăng ký-->
+                   <form>
+                   <div class="wrapper__form">
+                       <div class="wrapper__form-top wrapper-top">Đăng Ký</div>
+                       <div class="wrapper__form-center wrapper-mid">
+                           <div class="wrapper__form-center-left">
+                           <label for="ten">Họ và tên</label>
+                            <input type="text" value="" name="Ten" id="ten"  placeholder="Nhập vào họ tên">
+                            <span style="margin-left: 100px;" class="error" id="error-fullname"></span> 
+
+                            <label for="address">Địa chỉ</label>
+                            <input type="text" value="" name="Address" id="address" placeholder="Nhập vào địa chỉ">
+                            <span style="margin-left: 100px;" class="error" id="error-address"></span> 
+
+                            <label for="phone_number">Điện thoại</label>
+                            <input type="text" value="" name="Phone_number" id="phonenumber"  placeholder="Nhập vào số điện thoại">
+                            <span style="margin-left: 100px;" class="error" id="error-phonenumber"></span> 
+
+
+                            <label>Email</label>
+                            <input type="email" value="" name="email" id="email" placeholder="Nhập email của bạn">
+                            <span style="margin-left: 100px;" class="error" id="error-email"></span>
+                            
+                            <label for="date1">Ngày sinh</label>
+                            <input type="date"   value="" name="date1" id="birthday" required>
+                            <span style="margin-left:100px" class="error" id="error-birthday"></span>
+
+
+                           </div>
+                           <div class="wrapper__form-center-right" style="width:50%;height:100%;float: right;">
+                            <label for="ten_dang_nhap">Tên đăng nhập</label>
+                            <input type="text" value="" name="Ten_dang_nhap" id="ten_dang_nhap"  >
+                            <span style="margin-left: 100px;" class="error" id="error-username"></span> 
+
+                            <label for="mat_khau">Mật khẩu</label>
+                            <input type="password" value="" name="Mat_khau" id="mat_khau" maxlength="16">
+                            <span style="margin-left: 100px;" class="error" id="error-password"></span> 
+
+                            <label for="mat_khau_lai">Mật khẩu lại</label>
+                            <input type="password" value="" name="Mat_khau_lai" id="mat_khau_lai" maxlength="16">
+                            <span style="margin-left: 100px;" class="error" id="error-repassword"></span> 
+
+                           </div>
+                       </div>
+                       
+                       <div class="wrapper__form-bottom wrapper-bottom" >
+                        <div class="wrapper__form-bottom-right">
+                            <input type="reset" value="Reset">
+                        </div>
+                    </div>
+                    <div class="wrapper__form-bottom-bottom">Bạn đã có tài khoản?<a href="DangNhap.html">Đăng nhập</a>
+                     <a href="index.html">Quay lại trang chủ</a>
+                 </div>
+                   </div>
+                   </form>
+                   <div class="wrapper__form-bottom-left">
+                    <button onclick="addUser()">Đăng ký</button>
+                </div>                   
+    </body>
+</html>

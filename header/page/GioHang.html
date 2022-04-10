@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/cart.css">
+        <link rel="stylesheet" href="../css/giohang.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <script src="../js/js123.js"></script>
+        <script src="../js/cartJs.js"></script>
+        <script src="../js/Inner_Phanloai.js"></script>
+        <script src="../js/login.js"></script>
+        <link rel="stylesheet" href="../icon/fontawesome-free-5.15.4-web/fontawesome-free-5.15.4-web/css/all.min.css">
+    </head>
+    <body>
+        <script> 
+            window.onload = function()
+            {
+                displayCart(); // hiển thị các sản phẩm đã thêm vào giỏ
+                Khoitaomang();// Khởi tạo mảng để lưu trữ các sản phẩm người dùng muốn mua
+                DisplayAccount();
+            }
+        </script>
+        <div class="wrapper">
+                    <!--phần header-->
+            <header class="header">
+                <div class="vuong">
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a class="header__nav-item-links header__nav-item-links-one" href="#">Địa chỉ: <span>312/14, Bình Hưng Hòa, Binh Tân, TP-HCM </span></a></li>
+                    </ul>
+                    <ul class="header__nav-list" id="header__nav-list-center">
+                        <li class="header__nav-item"><img src="../NIKELB2.png" alt="Logo"></li>
+     
+                    </ul>
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                           
+                            <a class="header__nav-icon-links" href="GioHang.html?1" > Giỏ hàng
+                            <i class="header__nav-icon fas fa-cart-arrow-down"></i>
+                            </a>
+                        </li>
+                        <li class="header__nav-item" id="DangNhap"></li> <!--tên tài khoản khi đăng nhập sẽ được hiển thị trong thẻ này-->
+                        <li class="header__nav-item" id="DangKy"></li>
+                    </ul>
+                </nav>
+                </div>
+            </header>
+        <!--cart-->
+            <div class="cart-title"><h1>Giỏ hàng</h1></div>
+            <div class="cart">
+                <table class="cart_table" id="cart_table-id"> <!--Các sản phẩm đã thêm vào giỏ sẽ hiển thị trong thẻ này-->
+                   
+                </table>
+                <div style="margin-right: 300px;margin-top: 20px;">
+                    <div style="float:right;margin-left: 30px;"><a href="index.html?1" style="color: blue;">Tiếp tục mua sắm</a></div>
+                    <div style="float: right;" ><button style="background-color: red;"><a href="Thanhtoan.html">Thanh Toán</a></button> </div>
+                  <div style="float:right;margin-right: 30px;" id="money"></div>
+                </div>
+            </div>
+            <div class="content__wrapper" id="vuong">
+            </div>
+            
+        </br>
+    </br>
+</br>
+        
+        </br>
+            <span class="span_button" id="span_button">
+            </span>
+            </div>
+        </br>
+    </br>
+</br>
+</br>
+            </div>
+
+        <script src="../js/GioHang.js"></script>
+        <script src="../js/SanPham.js"></script>
+
+    </body>
+</html>

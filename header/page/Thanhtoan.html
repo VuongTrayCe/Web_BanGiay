@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán</title>
+    <link rel="stylesheet" href="../css/Thanhtoan.css">
+    <script src="../js/ThanhToan.js"></script>
+    <script src="../js/DonHang.js"></script>
+    <script src="../js/cartJs.js"></script>
+</head>
+<body>
+    <script>
+    window.onload=function()
+    {
+        Thanhtoanhoadon();// Thanhtoan.js  Có sản phẩm trong giỏ hàng mới được thanh toán
+    }
+    </script>
+    <!--Tạo form đăng ký để trỏ thành thành viên-->
+    <div class="wrapper_TT">
+        <div class="title-TT">Điền thông tin</div>
+    <div class="thanhtoan">
+        <form>
+        <div class="thanhtoan-body">
+            <div class="thanhtoan1">
+                <label>Tên khách hàng:</label>
+                <input class="thanhtoan2" type="text" id="name-TT" value="">
+            </div>
+            <div class="thanhtoan1">
+                <label>Địa chỉ nhận hàng:</label>
+                <input class="thanhtoan2" type="text" id="address-TT" value="">
+            </div>
+            <div class="thanhtoan1">
+                <label>Số điện thoại:</label>
+                <input class="thanhtoan2" type="number" id="phone-TT" value="">
+            </div>
+            <div class="thanhtoan1">
+                <label>Hình thức thanh toán</label>
+                <select id="select-TT">
+                    <option value="Thanh toán bằng thẻ">Thanh toán bằng thẻ</option>
+                    <option value="Thanh toán bằng ví momo">Thanh toán bằng ví momo</option>
+                    <option value="Thanh toán khi nhận hàng" selected>Thanh toán khi nhận hàng</option>
+                    <option></option>
+                </select>
+            </div>
+            <div class="thanhtoan1">
+                <label>Ngày đặt hàng:</label>
+                <input class="thanhtoan2" type="datetime" placeholder="mm/yy" id="day-TT" value="" readonly>
+            </div>
+            <div class="thanhtoan5"><span><a onclick="ThemDonHang()">Thanh toán</a></span></div>
+        </div>
+        <div class="ThanhToan_SanPham" id="ThanhToan_SanPham-id">
+            <table class="ThanhToan_SanPham-table" id="ThanhToan_SanPham-table-id">
+                       
+            </table>
+            <div style="float:right;margin-right: 30px;" id="TongTien"></div>
+        </div>
+        </form>
+    </div>
+    
+    </div>
+              
+      
+</body>
+</html>

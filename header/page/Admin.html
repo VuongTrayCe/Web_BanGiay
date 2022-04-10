@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link href="../css/admin.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../icon/fontawesome-free-5.15.4-web/fontawesome-free-5.15.4-web/css/all.min.css">
+    <script src="../js/user.js"></script>
+    <script src="../js/js123.js"></script>
+    </head>
+    <body>
+        <script>
+        window.onload = function()
+        {
+           ShowListUser();
+        }
+    </script>
+     <h1>Admin</h1>
+     <!--menu-->
+    <header class="header">
+        <div class="header__menu">
+        <div class="header__menu-item"><a href="#" onclick="HienThiTatCaSanPham()">Quản lý sản phẩm</a></div>
+        <div class="header__menu-item"><a href="#" onclick="displayMyOrder()">Quản lý đơn hàng</a></div>
+        <div class="header__menu-item"><a href="#" onclick="displayUser()">Quản lý tài khoản</a></div>
+        <div class="header__menu-item"><a href="DangNhap.html" onclick="">Đăng suất</a></div>
+        </div>
+    </header>
+    <!--Thêm thông tin một sản phẩm mới-->
+    <div id="display_AddProduct">
+            <form>
+                <p>*Thêm sản phẩm</p>
+                <label for="id">ID</label>
+                <input type="text" name="id" value="" id="add-id" >
+                 <label for="name">Tên sản phẩm</label>
+                 <input type="text" name="name" value="" id="add-name">
+                <label for="brand">Hãng</label>
+                <input type="text" name="brand" value="" id="add-brand">
+                <label for="img">Hình ảnh</label>
+                <input type="file" name="img" value="" id="add-img">
+                <lable for="gioitinh">Gioi tinh</lable>
+                <input type="text" name="gioitinh" value="" id="add-gioitinh">
+                <label for="gia">Giá</label>
+                 <input type="text" name="gia" value="" id="add-price" >
+                 <label for="Soluong">Số lượng</label>
+                <input type="text" name="Soluong" value="" id="add-SL">
+            </form>
+            <button onclick="themsanpham()" style="background-color:rgb(228, 116, 116);border-radius: 5px;">Thêm sản phẩm</button>
+    </div>
+    <!--Sủa sản phẩm-->
+    <div id="display_SuaProduct">
+        <div  id="display_SuaProduct-id">
+        <form>
+            <h2>Sửa sản phẩm</h2>
+            <label for="id">ID</label>
+            <input type="text" name="id" value="" id="sua-id" >
+             <label for="name">Tên sản phẩm</label>
+             <input type="text" name="name" value="" id="sua-name">
+            <label for="brand">Hãng</label>
+            <input type="text" name="brand" value="" id="sua-brand">
+            <label for="img">Hình ảnh</label>
+            <input type="file" name="img" value="" id="sua-img">
+            <label for="gioitinh">Giới tính</label>
+            <input type="text" name="gioitinh" value="" id="sua-gioitinh">
+            <label for="gia">Giá</label>
+             <input type="text" name="gia" value="" id="sua-price" >
+             <label for="Soluong">Số lượng</label>
+            <input type="text" name="Soluong" value="" id="sua-SL">
+        </form>
+        <button onclick="Suasanpham()" style="background-color:rgb(228, 116, 116);border-radius: 5px;">Sửa sản phẩm</button>
+    </div>
+    <div id="closeSuasanpham-id">
+        <button onclick=closeSuasanpham() ><i class="fas fa-times-circle"></i></button>
+    </div>
+</div>
+
+    
+    <!--Hiển thị sản phẩm-->
+    <div id="display_Product">
+        <table class="wrapper_table" id="display_Product-id">
+
+        </table>
+    </div>
+    <!--Kiểm tra trước khi xóa-->
+    <div class="check_delete" id="check_delete-id">
+        <div class="check_delete-header">Bạn có muốn xóa không</div>
+        <div class="check_delete-bottom">
+        <div id="check_delete-left"><a  onclick=kiemtrxoa(1)>Có</div>
+        <div id="check_delete-right"><a onclick="kiemtrxoa(0)">Không</a></div>
+        </div>
+    </div>
+<!--Hiển thị danh sách tài khoản sử dụng-->
+
+    <div id="display_User">
+        <table class="wrapper_table" id="wrapper_table-id">
+
+        </table>
+    </div>
+    <!--Hiển thị danh sách đơn hàng-->
+    <div id="display_order">
+        <table class="wrapper_table2" id="wrapper_table-order-id">
+
+        </table>
+    </div>
+    <div class="detail" id="detail-id">
+        <div id="detail-left-id"></div>
+        <div id="detail-right-id"></div>
+        <div id="Close-detail">
+            <button onclick="closeDetail()"><i class="fas fa-times-circle"></i></button>
+        </div>
+    </div>
+        <script src="../js/admin.js"></script>
+  
+    </body>
+</html>
+</html>

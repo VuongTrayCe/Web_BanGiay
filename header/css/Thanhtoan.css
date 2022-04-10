@@ -1,0 +1,89 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.thanhtoan {
+    width: 80%;
+    border: solid blue 1px;
+    margin: 0 auto;
+    position: relative;
+}
+.title-TT
+{
+    width:80.1%;
+    background-color:rgb(83, 83, 146);
+    text-align:center;
+    margin: auto;
+    font-size: 30px;
+}
+.thanhtoan-heading {
+    background-color: #4267b2;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    float: left;
+}
+.thanhtoan-body {
+    padding: 10px;
+    float: left;
+}
+.thanhtoan1 label {
+    font-weight: bold;
+}
+.thanhtoan1 {
+    display: block;
+    margin-bottom: 20px;
+    width:300px;
+}
+.thanhtoan2 {
+    display: block;
+    width: 95%;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.thanhtoan3 {
+    align-items: center;
+    background-color: palevioletred;
+    width: 40%;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+}
+.thanhtoan4 {
+    padding-left: 250px;
+    margin: auto;
+}
+.thanhtoan5
+{
+    text-align: center;
+    width:50%;
+    border: 1px solid;
+    margin: auto;
+    background-image: linear-gradient(to top,rgb(238, 66, 66),rgb(133, 108, 108));
+}
+.ThanhToan_SanPham
+{
+    float: left;
+    width: 40%;
+    height:400px;
+    margin-left:50px;
+    margin-top:50px;
+}
+.cart_table-row
+{
+    border-bottom: 2px solid;
+    width: 10%;
+
+}
+.cart_table-column-TT{
+   text-align: center;
+}
+.cart_table-column img
+{
+    width:70px;
+    height:70px;
+    margin-top: 30px;
+}
+a,button:hover{
+    cursor:pointer;
+}

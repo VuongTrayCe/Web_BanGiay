@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Liên kết các file css và javascript-->
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/giohang.css">
+        <link rel="stylesheet" href="../css/footer2.css">
+        <link rel="StyleSheet" href="../css/Detail.css">
+        <link rel="StyleSheet" href="../css/Lienhe.css">
+        <script src="../js/js123.js"></script>
+        <script src="../js/GioHang.js"></script>
+        <script src="../js/cartJs.js"></script>
+        <script src="../js/SanPham.js"></script>
+        <script src="../js/user.js"></script>
+        <script src="../js/Inner_Phanloai.js"></script>
+        <script src = "../js/login.js"></script>
+        <script src="../js/DonHang.js"></script>
+        <script src="../js/Timkiem.js"></script>
+        <script src="../js/detail.js"></script>
+        <script src="../js/Lienhe_Gioithieu.js" ></script>
+        <link rel="stylesheet" href="../icon/fontawesome-free-5.15.4-web/fontawesome-free-5.15.4-web/css/all.min.css">
+    </head>
+    <body>
+        <script> 
+            window.onload = function()
+            {
+            createProduct2();// js123 Taọ sản phẩm
+            display(); // js123.js   // Hiển thị sản phẩm trong page trang chủ
+            productSale();//js123.js // hiển thị sản phẩm đang giảm giá page trang chủ
+            DisplayAccount(); //login.js  // hiển thị tên người dùng
+            create(); // Donhang.js          // Tạo mảng đơn hàng để lưu thông tin
+            flag();//login.js         // Biến cờ hiệu để kiểm tra hiển thị tên  đăng nhập hoặc mặc định
+            createUser();// Tao mảng người dùng 
+            DetailDisplaysize(); // detail.js          // Hiển thị bảng size của giày
+            Khoitaomang(); // cart.js         // Khởi tạo mảng giỏ hàng để lưu sản phẩm
+            document.getElementById('search_option-id').style.display='none';
+            }
+        </script>
+       <script src="../js/SanPham.js"></script>
+       <!--Khung bao bọc của website-->
+        <div class="wrapper">
+            <!--Phần đầu trang bao gồm : địa chỉ, giỏ hàng, đăng nhập, đăng ký-->
+        <header class="header">
+            <div class="vuong">
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <a class="header__nav-item-links header__nav-item-links-one" href="#">Địa chỉ: <span>312/14, Bình Hưng Hòa, Binh Tân, TP-HCM </span></a></li>
+                </ul>
+                <ul class="header__nav-list" id="header__nav-list-center">
+                    <li class="header__nav-item"><img src="../NIKELB2.png" alt="Logo"></li>
+ 
+                </ul>
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                       
+                        <a class="header__nav-icon-links" href="GioHang.html?1" > Giỏ hàng
+                        <i class="header__nav-icon fas fa-cart-arrow-down"></i>
+                        </a>
+                    </li>
+                    <li class="header__nav-item" id="DangNhap"></li>
+                    <li class="header__nav-item" id="DangKy"></li>
+                </ul>
+            </nav>
+            </div>
+        </header>
+        <!--Khung xem nhanh khi người dung bấm vào sản phẩm-->
+        <div class="giohang" id="giohang">
+            <div class="giohang__image" id="giohang__image-id">
+            </div>
+            <div class="giohang__content" id="giohang__content-id">
+                <div class="giohang__content-item giohang__content-item-name" id="giohang__content-item-name-id"></div>
+                <div class="giohang__content-item giohang__content-item-gender" id="giohang__content-item-gender-id">dgd</div>
+                <div class="giohang__content-item giohang__content-item-price" id="giohang__content-item-price-id">vuong</div>
+                <div class="giohang__content-item giohang__content-item-soluongcon" id="giohang__content-item-soluongcon-id">vuong</div>
+                <div class="giohang__content-item giohang__content-item-SL" id="giohang__content-item-SL-id">
+                    <span>Số Lượng</span>    <!--Tăng giảm số lượng muốn mua-->
+                    <button onclick=GiamSL()><i class="fas fa-minus"></i></button>
+                    <input type="text" name="Soluong" value="1" id="SoLuongId" readonly>
+                    <button onclick=TangSL()><i class="fas fa-plus"></i></button>
+                </div>
+                <!--Thiết kế các nút chọn size giày-->
+                <div class="button-size">
+                    Size
+                    <button class="btn active" value="37">37</button>
+                    <button class="btn" value="38" >38</button>
+                    <button class="btn"  value="39">39</button>
+                    <button class="btn"  value="40">40</button>
+                    <button class="btn"  value="41">41</button>
+                </div>
+                <!--code js dùng để cập nhật đối tượng size nào đang được người dùng-->
+                <script>
+                    var x= document.querySelector('.button-size');
+                    var buttons = x.querySelectorAll(".btn");
+                    for(i=0;i<buttons.length;i++)
+                    {
+                        buttons[i].addEventListener('click',function()
+                        {
+
+                            var current= document.getElementsByClassName('active');
+                            for(i=0;i<current.length;i++)
+                            {
+                             current[0].className=current[0].className.replace("active", "");// Thay thế tên class của nút cũ bằng rỗng
+                            }
+                        this.className +=" active";  // cập nhật lại tên class cho nút mới
+                        var x = document.getElementsByClassName("btn");
+                        for(i=0;i<x.length;i++)
+                        {
+                        x[i].style.color="black";  // Reset tất cã màu của các nut trờ về màu đen
+                        console.log(x[i].value); 
+                        }
+
+                        var x = document.getElementsByClassName("active");
+                        x[0].style.color='red';  // cập nhật lại màu đỏ cho nut size đang được chọn
+                        })
+                    }
+                </script>
+                <div class="giohang__content-item giohang__content-item-add" id="giohang__content-item-add-id">
+                </div>
+            </div>
+            <div class="giohang__close">
+                <button onclick=closeGioHang() ><i class="fas fa-times-circle"></i></button><!--Đóng bảng xem nhanh-->
+            </div>
+        </div>
+    
+
+        <!--Menu top bao gồm trang chủ, sản phẩm, giới thiệu, liên hệ và khung để tìm kiếm-->
+        <div class="menutop" id="menutop">
+            <div class="menutop__list">
+                <div class="menutop__list-item" style="margin-left: 100px;">
+                <a href="index.html?1">Trang chủ</a>
+                </div>
+                <div class="menutop__list-item menutop__list-item-sp" style="float:left">Sản phẩm
+                    <div class="menutop__list-item-product" id="menutop__list-item-product-id"> <!--các thẻ để hiển thị các thể loại giày-->
+                        <span class="menutop__list-item-product-span"><a onclick="Phanloai(1,'Nam')">Giày nam</a></span> <!--Inner_Phanloai.js, Hiển thị giày theo phân loại-->
+                        <span class="menutop__list-item-product-span"><a onclick="Phanloai(2,'Nữ')" >Giày nữ</a></span>
+                        <span class="menutop__list-item-product-span"><a onclick="Phanloai(3,'kid')">Giày kid</a></span>
+                    </div> 
+                </div>
+              <!--<div class="menutop__list-item" style="float: left;">Tin tức</div>--> 
+                <div class="menutop__list-item" id="menutop__list-item-lienhe" style="float: left;"><a onclick="Lienhe()">Liên hệ</a></div>
+                <div class="menutop__list-item" style="float: left;"><a onclick="Gioithieu()">Giới thiệu</a></div>
+               <div class="menutop__search" style="float: left; margin-left: 150px;">
+                <label for="timkiem"></label>
+                <input type="text" name="Timkiem" value="" id="timkiem" placeholder="Vui lòng nhập">
+                <button onclick="TimKiemSanPham()"><i class="fas fa-search"></i>Tìm kiếm</button>
+               </div>
+            </div>
+        </div>
+        
+        <!--Tạo ra một khối để để xem chi tiết sản phẩm-->
+        <div class="Detail" id="Detail-id">
+            <div class="Detail__image" id="Detail__image-id">
+            </div>
+            <div class="Detail__content" id="Detail__content-id">
+                <div class="Detail__content-item Detail__content-item-name" id="Detail__content-item-name-id"></div>
+                <div class="Detail__content-item Detail__content-item-gender" id="Detail__content-item-gender-id">dgd</div>
+                <div class="Detail__content-item Detail__content-item-price" id="Detail__content-item-price-id">vuong</div>
+                <div class="Detail__content-item Detail__content-item-soluongcon" id="Detail__content-item-soluongcon-id">vuong</div>
+                <div class="Detail__content-item Detail__content-item-SL" id="Detail__content-item-SL-id">
+                    <span>Số Lượng</span>
+                    <button onclick=GiamSL2()><i class="fas fa-minus"></i></button>
+                    <input type="text" name="Soluong" value="1" id="SoLuongId2" readonly>
+                    <button onclick=TangSL2()><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="button-size2"><!--Nút size giày-->
+                    Size
+                    <button class="btn2 active2" value="37">37</button>
+                    <button class="btn2" value="38" >38</button>
+                    <button class="btn2"  value="39">39</button>
+                    <button class="btn2"  value="40">40</button>
+                    <button class="btn2"  value="41">41</button>
+                </div>
+                <!--Code js cho phần lựa chọn size trong phần xem chi tiết-->
+                <script>
+                    var x= document.querySelector('.button-size2'); 
+                    var buttons = x.querySelectorAll(".btn2");// Tạo ra một mảng các đối tượng có class là .btn2
+                    for(i=0;i<buttons.length;i++)
+                    {
+                        buttons[i].addEventListener('click',function() // bắt sự kiện khi người dùng chọn size
+                        {
+
+                            var current= document.getElementsByClassName('active2');
+                            for(i=0;i<current.length;i++)
+                            {
+                             current[0].className=current[0].className.replace("active2", ""); // thay thế tên class
+                            }
+                        this.className +=" active2";         // Cập nhật lại tên class cho đôi tượng đang được chọn
+                        var x = document.getElementsByClassName("btn2");
+                        for(i=0;i<x.length;i++)
+                        {
+                        x[i].style.backgroundColor="white";        // Cho tất cã nút trở về màu trắng
+                        console.log(x[i].value);
+                        }
+                        var x = document.getElementsByClassName("active2");
+                        x[0].style.backgroundColor='red';     // cập nhật lại màu đỏ cho nut đang được chọn
+                        })
+                    }
+                </script>
+                <!--bảng size và mô tả sản phẩm trong phần chi tiết sản phẩm-->
+                 <div class="Detail__content-item Detail__content-item-add" id="Detail__content-item-add-id">
+                </div>
+                <div class="Detail__content-item Detail__content-item-detail" id="Detail__content-item-detail-id">
+                    <div id="Detail__content-item-detail-left"><a onclick="DetailDisplaysize()">Bảng kích cỡ</a></div>
+                    <div id="Detail__content-item-detail-right"><a onclick="DetailDisplayinfo()">Mô tả sản phẩm</a></div>
+                    <div id="Detail__content-item-displaydetail-id">áds</div>
+                </div>
+               
+            </div>
+        </div>
+        <!--Tạo ra một khối , nơi đây dùng để hiển thị các thông tin khác nhau để cho người dùng xem như hiển thị sản phẩm, hiển thị nút,...  -->
+        <div class="content" id="content1">
+            <div id="title_product" style="margin-left: 100px;margin-top: 10px; color:green">
+
+            </div>
+            <div class="introduce_page" id="introduce_page-id">  <!--Khối để hiển thị thông tin giới thiệu của shop -->
+                <a style="color:red">Giới thiệu</a>
+                <div style="font-size: 15px;">NIKE LB là một là website bán giày trực tuyến với những mẫu giày của hãng NIKE, sản phẩm hiện đại, xinh đẹp, chính hãng, được cập nhật liên tục hàng tuần. Chúng tôi cam kêt về chất lượng sản phầm, nếu có sự cố gì xin vui lòng liên hệ gấp với chúng tôi để được hổ trợ.</div>
+            </div>
+            <!--Phan loai tim kiem-->
+        <div class="search_option" id="search_option-id"> <!--Khối này dùng để lựa chọn các khoảng giá , thể loại khi tìm kiếm-->
+            <div style="margin-right: 100px;">
+            <label for="loaisanpham">Thể loại</label>
+            <select name="loaisanpham" id="timkiem_phanloai1" onChange="TimkiemPhanLoaiSanPham()">
+                <option value="Nam">Nam</option>
+                <option value="Nữ">Nữ</option>
+                <option value="kid">Kid</option>
+                <option value="" selected>Tất cả sản phẩm</option>
+            </select>
+        </div>
+        <div>
+            <label for="Giaban">Giá bán</label>
+            <select name="Giaban" id="timkiem_phanloai2" style="width: 100px;" onChange="TimkiemPhanLoaiSanPham()">
+                <option value="a">Dưới 5000000Vnd</option>
+                <option value="b">5000000Vnd-20000000Vnd</option>
+                <option value="c">Trên 20000000Vnd</option>
+                <option value="" selected>Tất cả giá bán</option>
+            </select>
+        </div>
+        <!--hiển thị ảnh nên ở trang chủ, các hình ảnh giới thiệu, và các thông tin khác-->
+        </div>
+            <div class="image__introduce" id="image__introduce-id">
+                <img src="../intro5.png">
+            </div>
+            <div class="image__introduce" id="image__introduce-id2">
+                <img src="../pexels-photo-1895019.jpeg">
+            </div>
+            <div class="image__introduce-product-hot" id="image__introduce-id3">
+                <img src="../Sanphamhot.png">
+            </div>
+            <!--Những nội dung như danh sach sản phẩm, hiển thị các nút, hiển thị kết quả tìm kiếm, phần loại.... sẽ được hiển thị ở đây-->
+            <div class="content__wrapper" id="vuong">
+
+            </div>
+
+
+
+        </br>
+    </br>
+</br>
+        
+        </br>
+        <!--Khối các nút để phân trang-->
+            <span class="span_button" id="span_button">
+            </span>
+        
+        </br>
+            <span id="span_all"><!--hiển thị tất cã-->
+            </span>
+            <div id="div__arrow">
+            <span id="span__arrow">
+           </span>
+            </div>
+            <!--Hiển thị sản phẩm đang giảm giá-->
+            <div class="image__introduce-product-sale" id="sale0">
+                <div id="background__image-sale"><img src="../ps5-shoes.jpg"></div>
+                <div style="float:left;width: 100px;position:absolute;"><img src="../sale.jfif"></div>
+               <div style="float: left; margin-left: 20px;"><img src="../GiamGia.png"></div>
+            </div>
+            <div class="content__wrapper" id="sale">
+            </div>
+    
+        </div>
+    </br>
+</br>
+
+</br>
+     <!--Các icon trên footer-->
+    <div class="story_policy">
+        <div class="story_policy-item">
+            <div class="story_policy-1"><img src="../store_policy_1 (1).png"></div>
+            <div class="story_policy-2">Miễn phí giao hàng</div>
+            <div class="story_policy-3">với hóa đơn từ 1.000.000 VND trở lên</div>
+        </div>
+        <div class="story_policy-item">
+            <div class="story_policy-1"><img src="../store_policy_2.png"></div>
+            <div class="story_policy-2">30 ngày đổi sản phẩm</div>
+            <div class="story_policy-3">Đổi sản phẩm trong vòng 30 ngày</div>
+
+        </div>
+        <div class="story_policy-item">
+            <div class="story_policy-1"><img src="../store_policy_3.png"></div>
+            <div class="story_policy-2">Mua hàng từ 7h15-20h</div>
+            <div class="story_policy-3">Hotline mua hàng: 0955456678</div>
+
+        </div>
+        <div class="story_policy-item">
+            <div class="story_policy-1"><img src="../store_policy_4.png"></div>
+            <div class="story_policy-2">Miễn phí giao hàng</div>
+            <div class="story_policy-3">Miễn phí giao hàng</div>
+        </div>
+    </div>
+</br>
+</br>
+</br>
+</br>
+
+
+
+
+
+ <!--footer-->
+        <div class="footer__class" id="footer">
+           <div class="footer__class-image"> <img src="../Logo1-removebg-preview.png" alt=""style="margin-top: 1em;"/>
+           </div>
+            <div class="footer__class-intro" id="foot_tools1">
+                <h2>ABOUT NIKE</h2>
+                <h2>LOCALTION</h2>
+                <h2>BECOME A MEMBER</h2>	
+                <h2>SEND US FEEDBACK</h2>
+            </div>
+            <div class="footer__class-intro2" id="foot_tools2">
+                <h2>GET HELP</h2>
+                <a>Order Status</a>
+                <a >Delivery</a>
+                <a>Returns</a>
+                <a>Paymentoptions</a>
+            </div>
+            <div class="footer__class-links">
+                <ul>
+                    <h2>CONTACT US</h2>
+                    <a href="https://www.facebook.com/nike" target="blank"><li><i class="fab fa-facebook"> </i>Facebook </li> </a>
+                    <a href="https://www.instagram.com/nike/" target="blank"><li><i class="fab fa-instagram"> </i>Instagram </li> </a>
+                    <a href="https://twitter.com/Nike" target="blank"><li><i class="fab fa-twitter"></i> Twitter</li> </a>
+                    <a href="https://www.youtube.com/user/nike"><li><i class="fas fa-newspaper"></i>New</li></a>
+                </ul>
+            </div>
+        </div>
+        </div>
+        <script src="../js/GioHang.js"></script>
+        
+    </body>
+</html>
